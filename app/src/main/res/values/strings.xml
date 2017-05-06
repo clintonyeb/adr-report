@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">ADR Report</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email*</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_register">Register Here</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="full_name">Full name*</string>
+    <string name="register_me">Register Me</string>
+    <string name="phone_number">Phone number*</string>
+    <string name="org_name">Organization Name*</string>
+    <string name="destination">Destination</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Not registered?</string>
+    <string name="register_here">register here</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="login_success">Login success</string>
+    <string name="network">Check your internet connection</string>
+    <string name="incorrect">Username and Password incorrect</string>
+    <string name="server">Connection problem</string>
+    <string name="reg_comp_message">Registering complete!\nWe will email you a password once
+        we\'ve verified your account.\nYou will use your email address with the password to login.\nThank you.
+    </string>
+    <string name="designation">Designation</string>
+    <string name="report_new_patient">Report New Patient:</string>
+    <string name="prescription">Prescription:</string>
+    <string name="details_header">Details For: %1$s</string>
+    <string name="adr_effect">ADR Effect:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="service">Uploads images to server</string>
+    <string name="uploading">Uploading Images</string>
+    <string name="upload_success">Images uploaded</string>
+    <string name="upload_error">Error uploading images</string>
+    <string name="upload_cancelled">Upload was cancelled</string>
+    <string name="image_required">At least one image is required</string>
+</resources>

@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="com.clinton.adrreport.fragments.DetailFragment"
+              android:id="@+id/detailFragmentView" android:orientation="vertical">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerView"
+            android:textAlignment="center"
+            android:textColor="@color/primary_dark"
+            android:textSize="18sp"
+            android:text="Details"
+    android:layout_marginBottom="10dp"/>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/warningTextView"
+                android:text="@string/image_required"
+                android:textSize="15sp"
+                android:textColor="@color/warning"
+                android:typeface="monospace"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/presHeaderView"
+                    android:text="@string/prescription"
+                    android:textSize="15sp"
+                    android:textColor="@color/accent"
+                    android:typeface="monospace"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:baselineAligned="false"
+                          android:layout_marginTop="10dp"
+                          android:layout_marginBottom="10dp">
+
+                <FrameLayout android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:id="@+id/image1Frame"
+                             android:layout_weight="1"
+                >
+
+                    <ImageView style="@style/thumbnails"
+                               android:src="@mipmap/ic_main"
+                               android:id="@+id/image1"/>
+
+                    <ImageButton android:layout_width="120dp"
+                                 android:layout_height="120dp"
+                                 android:id="@+id/image1Button"
+                                 android:layout_gravity="center"
+                                 android:src="@drawable/ic_action_camera"
+                                 android:background="@android:color/transparent"/>
+
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp"
+                             android:layout_weight="1"
+                             android:layout_height="wrap_content"
+                             android:id="@+id/image2Frame">
+
+                    <ImageView style="@style/thumbnails"
+                               android:src="@mipmap/ic_main"
+                               android:id="@+id/image2"
+                    />
+                    <ImageButton android:layout_width="120dp"
+                                 android:layout_height="120dp"
+                                 android:id="@+id/image2Button"
+                                 android:layout_gravity="center"
+                                 android:src="@drawable/ic_action_camera"
+                                 android:background="@android:color/transparent"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/adrHeaderView"
+                    android:text="@string/adr_effect"
+                    android:typeface="monospace"
+                    android:textSize="15sp"
+                    android:textColor="@color/accent"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+                <FrameLayout android:layout_width="0dp"
+                             android:layout_weight="1"
+                             android:layout_height="wrap_content"
+                             android:id="@+id/image3Frame">
+
+                    <ImageView style="@style/thumbnails"
+                               android:src="@mipmap/ic_main"
+                               android:id="@+id/image3"
+                    />
+                    <ImageButton android:layout_width="120dp"
+                                 android:layout_height="120dp"
+                                 android:id="@+id/image3Button"
+                                 android:layout_gravity="center"
+                                 android:src="@drawable/ic_action_camera"
+                                 android:background="@android:color/transparent"/>
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp"
+                             android:layout_weight="1"
+                             android:layout_height="wrap_content"
+                             android:id="@+id/image4Frame">
+
+                    <ImageView style="@style/thumbnails"
+                               android:src="@mipmap/ic_main"
+                               android:id="@+id/image4"
+                    />
+                    <ImageButton android:layout_width="120dp"
+                                 android:layout_height="120dp"
+                                 android:id="@+id/image4Button"
+                                 android:layout_gravity="center"
+                                 android:src="@drawable/ic_action_camera"
+                                 android:background="@android:color/transparent"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <Button android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    android:id="@+id/submitButton"
+                    android:textStyle="bold"
+                    android:textColor="@color/icons"
+                    android:background="@color/primary_light"
+                    style="?android:textAppearanceMedium"
+                    android:layout_margin="20dp"
+                    android:enabled="false"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
