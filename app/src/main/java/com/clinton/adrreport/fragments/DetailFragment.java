@@ -256,7 +256,7 @@ public class DetailFragment extends Fragment {
 
     private boolean scaleDownImage(String path) {
         Bitmap bIn = BitmapFactory.decodeFile(path);
-        Bitmap bOut = Bitmap.createScaledBitmap(bIn, 1000, 1000, false);
+        Bitmap bOut = Bitmap.createScaledBitmap(bIn, 600, 600, false);
         // File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File resizedFile = new File(path);
 
@@ -309,13 +309,20 @@ public class DetailFragment extends Fragment {
                 break;
         }
 
-        if (oldPath != null)
-            deleteOldPicture(oldPath);
+        deleteOldPicture(oldPath);
 
         return image;
     }
 
+    public void deleteUnusedPictures() {
+        deleteOldPicture(mReport.getImageFile1());
+        deleteOldPicture(mReport.getImageFile2());
+        deleteOldPicture(mReport.getImageFile3());
+        deleteOldPicture(mReport.getImageFile4());
+    }
+
     private boolean deleteOldPicture(String path) {
+        if (path == null) return false;
         File file = new File(path);
         return file.exists() && file.delete();
     }

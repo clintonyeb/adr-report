@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     private static final int PERMISSIONS_REQUEST_CODE = 1;
     String patientName = null;
     String patientId = null;
+    Fragment mCurrentFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,14 +129,17 @@ public class MainActivity extends AppCompatActivity
     private AlertDialog getDialogBox(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Images taken will not be sent?")
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainActivity.super.onBackPressed();
+
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //TODO: Delete images
+                        if (mCurrentFragment instanceof DetailFragment) {
+                            ((DetailFragment) mCurrentFragment).deleteUnusedPictures();
+                        }
+                       MainActivity.super.onBackPressed();
                     }
                 });
         return builder.create();
@@ -151,7 +155,8 @@ public class MainActivity extends AppCompatActivity
     void startCamera() {
         if (patientName != null && patientId != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragment, DetailFragment.newInstance(patientName, patientId));
+            mCurrentFragment = DetailFragment.newInstance(patientName, patientId);
+            transaction.replace(R.id.fragment, mCurrentFragment);
             transaction.addToBackStack(null);
             transaction.commit();
         }
@@ -161,7 +166,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFormSubmitted(boolean val) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment, new MainActivityFragment());
+        mCurrentFragment = new MainActivityFragment();
+        transaction.replace(R.id.fragment, mCurrentFragment);
         transaction.commit();
         Toast.makeText(this, "Uploading images", Toast.LENGTH_SHORT).show();
     }
